@@ -2,9 +2,10 @@
 Welcome to my LeetCode solutions repository! Here, I am solving various LeetCode problems and sharing my solutions. As I continue to practice and improve my problem-solving skills, I will keep adding more solutions to this repository.
 
 ## Problems Solved
-### 1.Add Two Numbers
-### 2.Longest Substring Without Repeating Characters
-### 3.Two Sum
+### 1.Two Sum
+### 2.Add Two Numbers
+### 3.Longest Substring Without Repeating Characters
+
 ## How to Use
 You can find the solutions in their respective directories. Each directory contains a README explaining the problem statement and my approach to solving it.
 ## Two Sum
