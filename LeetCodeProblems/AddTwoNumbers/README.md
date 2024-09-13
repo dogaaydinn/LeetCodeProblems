@@ -59,6 +59,21 @@ You are given two non-empty linked lists representing two non-negative integers.
 - **Space Complexity**: `O(max(m, n))`  
   The space complexity is proportional to the length of the resulting linked list, which can be at most `max(m, n) + 1` nodes long due to potential carry.
 
+## Performance
+
+- **Runtime**: 71 ms (Beats 80.05% of submissions)
+- **Memory Usage**: 52.51 MB (Beats 15.51% of submissions)
+
+## Why Linked List Approach?
+
+Using a linked list allows us to efficiently handle numbers of arbitrary length without worrying about overflow or large integer calculations. This approach directly simulates the addition process and ensures that the result is returned as a new linked list.
+
+## Key Points
+
+- **Carry Handling**: The solution effectively manages carry-over from one digit to the next.
+- **Edge Cases**: Handles cases with different lengths of linked lists and additional carry.
+
+
 ## Explanation of the Code
 
 The solution uses a dummy node to simplify list manipulations and a while loop to process digits from both linked lists. It efficiently handles cases where the lengths of the linked lists are different and manages the carry properly.
