@@ -1,4 +1,4 @@
-## Merge Strings Alternately
+# 🔄  Merge Strings Alternately
 
 This repository provides a solution to the "Merge Strings Alternately" problem using string manipulation. The implementation efficiently merges two input strings by alternating characters from each string.
 
