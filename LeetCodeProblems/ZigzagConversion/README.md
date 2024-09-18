@@ -1,4 +1,4 @@
-🐛## Zigzag Conversion
+## 🐛Zigzag Conversion
 This repository provides a solution to the **_"Zigzag Conversion"_** problem. The implementation converts a given string into a zigzag pattern across a specified number of rows and reads it row by row.
 
 ### Problem Description
