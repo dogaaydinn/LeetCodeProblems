@@ -1,4 +1,4 @@
-# Longest Palindromic Substring
+# 🔍 Longest Palindromic Substring
 
 This repository provides a solution to the "Longest Palindromic Substring" problem. The implementation finds the longest palindromic substring within a given string.
 
