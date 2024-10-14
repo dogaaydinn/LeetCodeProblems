@@ -1,7 +1,7 @@
 namespace _75InterviewQuestion.CanPlaceFlowers;
 
-public class CanPlaceFlowers {
-    public bool CanPlace(int[] flowerbed, int n) {
+public static class _605_CanPlaceFlowers {
+    public static bool CanPlace(int[] flowerbed, int n) {
 
         var count = 0;
         var i = 0;

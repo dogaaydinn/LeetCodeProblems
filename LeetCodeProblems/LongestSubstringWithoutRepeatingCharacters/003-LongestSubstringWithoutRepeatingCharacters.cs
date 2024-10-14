@@ -1,18 +1,17 @@
 namespace LeetCodeProblems.LongestSubstringWithoutRepeatingCharacters;
 
-public class LongestSubstringWithoutRepeatingCharacters
+public static class _003_LongestSubstringWithoutRepeatingCharacters
 {
-    public int LengthOfLongestSubstring(string s)
+    public static int LengthOfLongestSubstring(string s)
     {
-        HashSet<char> substring = new HashSet<char>();
+        var substring = new HashSet<char>();
         var maxLength = 0;
         var start = 0;
 
         foreach (var currentChar in s)
         {
-            if (!substring.Contains(currentChar))
+            if (substring.Add(currentChar))
             {
-                substring.Add(currentChar);
                 maxLength = Math.Max(maxLength, substring.Count);
             }
             else

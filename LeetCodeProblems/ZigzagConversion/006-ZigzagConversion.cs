@@ -2,8 +2,8 @@ using System.Text;
 
 namespace LeetCodeProblems.ZigzagConversion;
 
-public class ZigzagConversion {
-    public string Convert(string s, int numRows)
+public static class _006_ZigzagConversion {
+    public static string Convert(string s, int numRows)
     {
         if (numRows <= 1) return s;
 
@@ -16,7 +16,7 @@ public class ZigzagConversion {
         var currentRow = 0;
         var direction = -1;
 
-        foreach (char c in s)
+        foreach (var c in s)
         {
             if (currentRow == 0 || currentRow == numRows - 1)
             {

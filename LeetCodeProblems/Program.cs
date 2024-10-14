@@ -1,3 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿namespace LeetCodeProblems;
 
-Console.WriteLine("Hello, World!");
+internal static class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("LeetCode Problems");
+    }
+}

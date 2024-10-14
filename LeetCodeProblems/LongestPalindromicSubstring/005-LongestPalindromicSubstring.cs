@@ -1,8 +1,8 @@
 namespace LeetCodeProblems.LongestPalindromicSubstring;
 
-public class LongestPalindromicSubstring
+public static class _005_LongestPalindromicSubstring
 {
-    public string LongestPalindrome(string s)
+    public static string LongestPalindrome(string s)
     {
         var start = 0;
         var end = 0;
@@ -22,7 +22,7 @@ public class LongestPalindromicSubstring
         return s.Substring(start, end - start + 1);
     }
     
-    private int ExpandCenter(string s, int left, int right)
+    private static int ExpandCenter(string s, int left, int right)
     {
         while (left >= 0 && right < s.Length && s[left] == s[right])
         {

@@ -1,8 +1,8 @@
 namespace LeetCodeProblems.ReverseInteger;
 
-public class ReverseInteger {
+public static class _007_ReverseInteger {
     
-    public int Reverse(int x) {
+    public static int Reverse(int x) {
         
         var reversed = 0;
         

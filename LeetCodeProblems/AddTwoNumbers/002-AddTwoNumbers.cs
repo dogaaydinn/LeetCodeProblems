@@ -1,41 +1,39 @@
 namespace LeetCodeProblems.AddTwoNumbers;
 
-public class AddTwoNumbers
+public abstract class _002_AddTwoNumbers
 {
   public class ListNode {
-      public int val;
-      public ListNode next;
-      public ListNode(int val=0, ListNode next=null) {
-          this.val = val;
-         this.next = next;
+      public int Val;
+      public ListNode? Next;
+      public ListNode(int val=0, ListNode? next=null) {
+            Val = val;
+            Next = next;
       }
   }
 
-    public ListNode AddTwoNumbersSolution(ListNode l1, ListNode l2) {
+    public static ListNode? AddTwoNumbersSolution(ListNode? l1, ListNode? l2) {
         
-        ListNode current = new ListNode(0);
-        ListNode head = current;
-        int value = 0;
+        var current = new ListNode(0);
+        var head = current;
+        var value = 0;
 
         while (l1 != null || l2 != null || value != 0)
         {
-            var sum1 = l1?.val ?? 0;
-            var sum2 = l2?.val ?? 0;
+            var sum1 = l1?.Val ?? 0;
+            var sum2 = l2?.Val ?? 0;
             
             var sum = sum1 + sum2 + value;
             
             value = sum / 10;
-            current.val = sum % 10;
-            
-            if(l1 != null) l1 = l1.next;
-            if(l2 != null) l2 = l2.next;
+            current.Val = sum % 10;
+
+            l1 = l1?.Next;
+            l2 = l2?.Next;
 
 
-            if (l1 != null || l2 != null || value != 0)
-            {
-                current.next = new ListNode(0);
-                current = current.next;
-            }
+            if (l1 == null && l2 == null && value == 0) continue;
+            current.Next = new ListNode(0);
+            current = current.Next;
         }
         
         return head;
