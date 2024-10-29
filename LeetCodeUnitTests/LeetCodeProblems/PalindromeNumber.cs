@@ -63,10 +63,10 @@ public class _009_PalindromeNumberTests
     public void IsPalindrome_Zero_ReturnsTrue()
     {
         // Arrange
-        int input = 0;
+        var input = 0;
 
         // Act
-        bool result = _009_PalindromeNumber.IsPalindrome(input);
+        var result = _009_PalindromeNumber.IsPalindrome(input);
 
         // Assert
         Assert.True(result);
@@ -76,10 +76,10 @@ public class _009_PalindromeNumberTests
     public void IsPalindrome_MinValue_ReturnsFalse()
     {
         // Arrange
-        int input = int.MinValue;
+        var input = int.MinValue;
 
         // Act
-        bool result = _009_PalindromeNumber.IsPalindrome(input);
+        var result = _009_PalindromeNumber.IsPalindrome(input);
 
         // Assert
         Assert.False(result);

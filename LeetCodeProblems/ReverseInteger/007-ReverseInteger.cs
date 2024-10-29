@@ -1,16 +1,16 @@
 namespace LeetCodeProblems.ReverseInteger;
 
-public static class _007_ReverseInteger {
-    
-    public static int Reverse(int x) {
-        
+public static class _007_ReverseInteger
+{
+    public static int Reverse(int x)
+    {
         var reversed = 0;
-        
+
         while (x != 0)
         {
             var pop = x % 10;
             x /= 10;
-            
+
             switch (reversed)
             {
                 case > int.MaxValue / 10:
@@ -23,7 +23,7 @@ public static class _007_ReverseInteger {
                     break;
             }
         }
-        
+
         return reversed;
     }
 }

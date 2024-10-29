@@ -10,9 +10,9 @@ public class MergeStringsAlternatelyTests
     {
         const string word1 = "abc";
         const string word2 = "pqr";
-        
+
         var result = _1798_MergeStringsAlternately.MergeAlternately(word1, word2);
-        
+
         Assert.Equal("apbqcr", result);
     }
 
@@ -21,7 +21,7 @@ public class MergeStringsAlternatelyTests
     {
         const string word1 = "ab";
         const string word2 = "pqrs";
-        
+
         var result = _1798_MergeStringsAlternately.MergeAlternately(word1, word2);
 
         Assert.Equal("apbqrs", result);

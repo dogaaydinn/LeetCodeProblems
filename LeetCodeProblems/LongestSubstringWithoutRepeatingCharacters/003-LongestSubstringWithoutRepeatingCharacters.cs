@@ -9,7 +9,6 @@ public static class _003_LongestSubstringWithoutRepeatingCharacters
         var start = 0;
 
         foreach (var currentChar in s)
-        {
             if (substring.Add(currentChar))
             {
                 maxLength = Math.Max(maxLength, substring.Count);
@@ -24,7 +23,6 @@ public static class _003_LongestSubstringWithoutRepeatingCharacters
 
                 substring.Add(currentChar);
             }
-        }
 
         return maxLength;
     }

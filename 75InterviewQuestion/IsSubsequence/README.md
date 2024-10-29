@@ -1,12 +1,15 @@
 # 392. Is Subsequence
 
-This repository contains solutions to the **"Is Subsequence"** problem from LeetCode. The problem is to determine whether a given string `s` is a subsequence of string `t`.
+This repository contains solutions to the **"Is Subsequence"** problem from LeetCode. The problem is to determine
+whether a given string `s` is a subsequence of string `t`.
 
 ## Problem Description
 
 Given two strings `s` and `t`, return `true` if `s` is a subsequence of `t`, or `false` otherwise.
 
-A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. For example, `"ace"` is a subsequence of `"abcde"`, while `"aec"` is not.
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the
+characters without disturbing the relative positions of the remaining characters. For example, `"ace"` is a subsequence
+of `"abcde"`, while `"aec"` is not.
 
 ### Example 1:
 
@@ -28,12 +31,16 @@ A subsequence of a string is a new string that is formed from the original strin
 
 ### First Solution
 
-The first solution iterates over both strings but uses the `Substring` method to progressively reduce the `mainString` (i.e., `t`). This approach works but is inefficient due to the continuous creation of new substrings, leading to higher memory usage and slower execution.
+The first solution iterates over both strings but uses the `Substring` method to progressively reduce the `mainString` (
+i.e., `t`). This approach works but is inefficient due to the continuous creation of new substrings, leading to higher
+memory usage and slower execution.
 
-#### Time Complexity: 
+#### Time Complexity:
+
 O(n), where `n` is the length of `t`, but the use of `Substring` can degrade performance.
 
 #### Code:
+
 ```csharp
 public bool IsSubsequence(string s, string t)
 {

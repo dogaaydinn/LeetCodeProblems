@@ -2,18 +2,9 @@ namespace LeetCodeProblems.AddTwoNumbers;
 
 public abstract class _002_AddTwoNumbers
 {
-  public class ListNode {
-      public int Val;
-      public ListNode? Next;
-      public ListNode(int val=0, ListNode? next=null) {
-            Val = val;
-            Next = next;
-      }
-  }
-
-    public static ListNode? AddTwoNumbersSolution(ListNode? l1, ListNode? l2) {
-        
-        var current = new ListNode(0);
+    public static ListNode? AddTwoNumbersSolution(ListNode? l1, ListNode? l2)
+    {
+        var current = new ListNode();
         var head = current;
         var value = 0;
 
@@ -21,9 +12,9 @@ public abstract class _002_AddTwoNumbers
         {
             var sum1 = l1?.Val ?? 0;
             var sum2 = l2?.Val ?? 0;
-            
+
             var sum = sum1 + sum2 + value;
-            
+
             value = sum / 10;
             current.Val = sum % 10;
 
@@ -32,10 +23,22 @@ public abstract class _002_AddTwoNumbers
 
 
             if (l1 == null && l2 == null && value == 0) continue;
-            current.Next = new ListNode(0);
+            current.Next = new ListNode();
             current = current.Next;
         }
-        
+
         return head;
+    }
+
+    public class ListNode
+    {
+        public ListNode? Next;
+        public int Val;
+
+        public ListNode(int val = 0, ListNode? next = null)
+        {
+            Val = val;
+            Next = next;
+        }
     }
 }

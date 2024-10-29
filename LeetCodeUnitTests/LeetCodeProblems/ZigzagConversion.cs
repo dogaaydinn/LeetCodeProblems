@@ -10,9 +10,9 @@ public class ZigzagConversion
     {
         const string input = "PAYPALISHIRING";
         const int numRows = 3;
-        
+
         var result = _006_ZigzagConversion.Convert(input, numRows);
-        
+
         Assert.Equal("PAHNAPLSIIGYIR", result);
     }
 }

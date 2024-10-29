@@ -10,9 +10,9 @@ public class KidsWithTheGreatestNumberOfCandiesTests
     {
         int[] candies = { 2, 3, 5, 1, 3 };
         const int extraCandies = 3;
-        
+
         var result = _1431_KidsWithTheGreatestNumberOfCandies.KidsWithCandies(candies, extraCandies);
-        
+
         Assert.Equal(new[] { true, true, true, false, true }, result);
     }
 

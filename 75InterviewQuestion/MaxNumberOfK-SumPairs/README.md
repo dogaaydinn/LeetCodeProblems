@@ -1,17 +1,23 @@
 # Max Number of K-Sum Pairs (LeetCode 1679)
 
 ## Problem Description
-You are given an integer array `nums` and an integer `k`. In one operation, you can pick two numbers from the array whose sum equals `k` and remove them from the array. Return the **maximum number of operations** you can perform on the array.
+
+You are given an integer array `nums` and an integer `k`. In one operation, you can pick two numbers from the array
+whose sum equals `k` and remove them from the array. Return the **maximum number of operations** you can perform on the
+array.
 
 ### Example
+
 **Input:** `nums = [1,2,3,4]`, `k = 5`  
 **Output:** `2`  
-**Explanation:** 
+**Explanation:**
+
 - Remove numbers `1` and `4` to get `nums = [2,3]`
 - Remove numbers `2` and `3` to get `nums = []`
 - Total operations = `2`
 
 **Constraints:**
+
 - `1 <= nums.length <= 10^5`
 - `1 <= nums[i] <= 10^9`
 - `1 <= k <= 10^9`
@@ -19,17 +25,22 @@ You are given an integer array `nums` and an integer `k`. In one operation, you 
 ## Approach
 
 ### Intuition
-The problem requires finding pairs that sum up to `k` without reusing elements from previous pairs. To efficiently match elements, we use a dictionary to track the frequency of each number as we process the array.
+
+The problem requires finding pairs that sum up to `k` without reusing elements from previous pairs. To efficiently match
+elements, we use a dictionary to track the frequency of each number as we process the array.
 
 ### Solution
+
 1. **Frequency Dictionary**: We use a dictionary (`frequencyList`) to track the count of each number in `nums`.
 2. **Iterate Through `nums`**:
-   - For each element `num`, calculate its required pair value as `k - num`.
-   - Check if the pair value exists in `frequencyList`:
-     - **If exists and frequency > 0**: We found a valid pair, so we increase the operation count and decrease the frequency of the pair value.
-     - **If does not exist**: Add `num` to the dictionary or increase its frequency, as it might find a pair later.
+    - For each element `num`, calculate its required pair value as `k - num`.
+    - Check if the pair value exists in `frequencyList`:
+        - **If exists and frequency > 0**: We found a valid pair, so we increase the operation count and decrease the
+          frequency of the pair value.
+        - **If does not exist**: Add `num` to the dictionary or increase its frequency, as it might find a pair later.
 
 ### Complexity
+
 - **Time Complexity**: $$O(n)$$ - where \( n \) is the length of `nums`. Each element is processed once.
 - **Space Complexity**: $$O(n)$$ - for the dictionary to store frequencies of unique numbers.
 

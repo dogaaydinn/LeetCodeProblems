@@ -1,6 +1,7 @@
 namespace LeetCodeProblems.PalindromeNumber;
 
-public class _009_PalindromeNumber {
+public class _009_PalindromeNumber
+{
     public static bool IsPalindrome(int x)
     {
         if (x == int.MinValue) return false;

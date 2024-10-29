@@ -9,9 +9,9 @@ public class ReverseInteger
     public void Reverse_ReturnsCorrectReversedInteger()
     {
         const int input = 123;
-        
+
         var result = _007_ReverseInteger.Reverse(input);
-        
+
         Assert.Equal(321, result);
     }
 
@@ -19,9 +19,9 @@ public class ReverseInteger
     public void Reverse_ReturnsZeroForOverflow()
     {
         const int input = 1534236469;
-        
+
         var result = _007_ReverseInteger.Reverse(input);
-        
+
         Assert.Equal(0, result);
     }
 }

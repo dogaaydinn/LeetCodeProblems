@@ -1,6 +1,7 @@
 # 🔍 Longest Palindromic Substring
 
-This repository provides a solution to the "Longest Palindromic Substring" problem. The implementation finds the longest palindromic substring within a given string.
+This repository provides a solution to the "Longest Palindromic Substring" problem. The implementation finds the longest
+palindromic substring within a given string.
 
 ## Problem Description
 
@@ -15,6 +16,7 @@ You are given a string `s`. Your task is to find the longest substring that is a
 ### Example
 
 **Input:**
+
 ```csharp
 s = "babad"
 Output:

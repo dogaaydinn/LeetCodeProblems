@@ -4,7 +4,8 @@ The problem can be efficiently solved using the two-pointer technique.
 
 ### Initial Setup:
 
-Place one pointer at the start (left = 0) and another pointer at the end (right = height.Length - 1) of the height array.
+Place one pointer at the start (left = 0) and another pointer at the end (right = height.Length - 1) of the height
+array.
 Track the maximum area (maxArea = 0) as we iterate through the array.
 Iterative Process:
 

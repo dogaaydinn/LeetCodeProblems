@@ -1,7 +1,5 @@
 namespace LeetCodeProblems.TwoSum;
 
-using System.Collections.Generic;
-
 public static class _001_TwoSum
 {
     public static int[] TwoSumSolution(int[] nums, int target)
@@ -12,13 +10,11 @@ public static class _001_TwoSum
         {
             var other = target - nums[i];
 
-            if (returnedIndices.TryGetValue(other, out var index))
-            {
-                return new[] { index, i };
-            }
+            if (returnedIndices.TryGetValue(other, out var index)) return new[] { index, i };
 
             returnedIndices[nums[i]] = i;
         }
+
         throw new ArgumentException("No two sum solution");
     }
 }

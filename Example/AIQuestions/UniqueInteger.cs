@@ -14,5 +14,4 @@ public class UniqueInteger
 
         return seenOnce;
     }
-        
 }

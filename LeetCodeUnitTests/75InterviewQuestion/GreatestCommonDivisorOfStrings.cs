@@ -10,9 +10,9 @@ public class GreatestCommonDivisorOfStringsTests
     {
         const string str1 = "ABCABC";
         const string str2 = "ABC";
-        
+
         var result = _1071_GreatestCommonDivisorOfStrings.GcdOfStrings(str1, str2);
-        
+
         Assert.Equal("ABC", result);
     }
 
@@ -21,9 +21,9 @@ public class GreatestCommonDivisorOfStringsTests
     {
         const string str1 = "ABABAB";
         const string str2 = "ABAB";
-        
+
         var result = _1071_GreatestCommonDivisorOfStrings.GcdOfStrings(str1, str2);
-        
+
         Assert.Equal("AB", result);
     }
 }
