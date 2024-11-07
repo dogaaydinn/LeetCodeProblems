@@ -44,10 +44,7 @@ public class _17_LetterCombinationsPhoneNumber
             {
                 var digit = digits[index];
                 if (!digitMap.TryGetValue(digit, out var letters)) continue;
-                foreach (var letter in letters)
-                {
-                    stack.Push((index + 1, current + letter));
-                }
+                foreach (var letter in letters) stack.Push((index + 1, current + letter));
             }
         }
 
