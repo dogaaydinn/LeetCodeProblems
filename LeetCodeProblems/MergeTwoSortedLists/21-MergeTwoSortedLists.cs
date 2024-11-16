@@ -16,9 +16,9 @@ public class _21_MergeTwoSortedLists
 {
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
-        ListNode dummy = new ListNode(0);
-        ListNode current = dummy;
-        
+        var dummy = new ListNode();
+        var current = dummy;
+
         while (list1 != null && list2 != null)
         {
             if (list1.val < list2.val)
@@ -34,9 +34,9 @@ public class _21_MergeTwoSortedLists
 
             current = current.next;
         }
-        
+
         current.next = list1 ?? list2;
-        
+
         return dummy.next;
     }
 }
