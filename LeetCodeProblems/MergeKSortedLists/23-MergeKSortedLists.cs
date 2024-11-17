@@ -1,9 +1,9 @@
 
 
 public class Solution {
-    public ListNode MergeKLists(ListNode[] lists) {
+    public ListNode? MergeKLists(ListNode[] lists) {
 
-        var heap = new SortedSet<(int val, int listIndex, ListNode node)>();
+        var heap = new SortedSet<(int val, int listIndex, ListNode? node)>();
         
         for (var i = 0; i < lists.Length; i++)
         {

@@ -1,9 +1,9 @@
 public class ListNode
 {
-    public ListNode next;
+    public ListNode? next;
     public int val;
 
-    public ListNode(int val = 0, ListNode next = null)
+    public ListNode(int val = 0, ListNode? next = null)
     {
         this.val = val;
         this.next = next;
@@ -12,7 +12,7 @@ public class ListNode
 
 public class _19_RemoveNthNodeFromEndList
 {
-    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    public ListNode? RemoveNthFromEnd(ListNode? head, int n)
     {
         var dummy = new ListNode(0, head);
         var first = dummy;
