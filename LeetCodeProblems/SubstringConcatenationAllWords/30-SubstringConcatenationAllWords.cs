@@ -2,7 +2,6 @@ namespace LeetCodeProblems.SubstringConcatenationAllWords;
 
 public class _30_SubstringConcatenationAllWords
 {
-
     public IList<int> FindSubstring(string? s, string[]? words)
     {
         IList<int> result = new List<int>();

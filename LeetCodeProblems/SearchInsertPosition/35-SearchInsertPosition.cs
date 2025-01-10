@@ -1,7 +1,7 @@
 namespace LeetCodeProblems.SearchInsertPosition;
 
-public class _35_SearchInsertPosition {
-    
+public class _35_SearchInsertPosition
+{
     /*
      Approach:
     1. We will use binary search to find the target element.
@@ -12,28 +12,26 @@ public class _35_SearchInsertPosition {
     6. If the target element is smaller than the first element, the left index will be 0.
     7. If the target element is between the first and last element, the left index will be the index where the target element should be inserted.
     8. Time complexity is O(log n) and space complexity is O(1).
-    
+
      */
-    
-    public int SearchInsert(int[] nums, int target) {
-        
+
+    public int SearchInsert(int[] nums, int target)
+    {
         var left = 0;
         var right = nums.Length - 1;
-        
-        while (left <= right) {
+
+        while (left <= right)
+        {
             var mid = left + (right - left) / 2;
-            
-            if (nums[mid] == target) {
-                return mid;
-            }
-            
-            if (nums[mid] < target) {
+
+            if (nums[mid] == target) return mid;
+
+            if (nums[mid] < target)
                 left = mid + 1;
-            } else {
+            else
                 right = mid - 1;
-            }
         }
-        
+
         return left;
     }
 }

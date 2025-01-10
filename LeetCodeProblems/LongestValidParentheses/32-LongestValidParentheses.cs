@@ -10,7 +10,7 @@ namespace LeetCodeProblems.LongestValidParentheses;
     - If stack is empty then we will push the index to stack.
     - If stack is not empty then we will calculate the length of valid parentheses and update the maxLength.
     - Finally we will return the maxLength.
-    
+
     # Time Complexity
         - O(N), where N is the length of the string.
     # Space Complexity
@@ -24,28 +24,30 @@ namespace LeetCodeProblems.LongestValidParentheses;
         - If stack is empty then we will push the index to stack.
         - If stack is not empty then we will calculate the length of valid parentheses and update the maxLength.
         - Finally we will return the maxLength.
-        
+
  */
-public class _32_LongestValidParentheses {
-    public int LongestValidParentheses(string s) {
-        Stack<int> stack = new Stack<int>();
-        stack.Push(-1); 
+public class _32_LongestValidParentheses
+{
+    public int LongestValidParentheses(string s)
+    {
+        var stack = new Stack<int>();
+        stack.Push(-1);
         var maxLength = 0;
 
-        for (var i = 0; i < s.Length; i++) {
-            if (s[i] == '(') {
-                stack.Push(i); 
-            } else {
-                stack.Pop(); 
-                if (stack.Count == 0) {
-                    stack.Push(i); 
-                } else {
-                    maxLength = Math.Max(maxLength, i - stack.Peek());
-                }
+        for (var i = 0; i < s.Length; i++)
+            if (s[i] == '(')
+            {
+                stack.Push(i);
             }
-        }
+            else
+            {
+                stack.Pop();
+                if (stack.Count == 0)
+                    stack.Push(i);
+                else
+                    maxLength = Math.Max(maxLength, i - stack.Peek());
+            }
 
         return maxLength;
     }
-
 }

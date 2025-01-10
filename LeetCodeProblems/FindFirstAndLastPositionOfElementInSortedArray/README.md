@@ -2,7 +2,8 @@
 
 ## Problem Description
 
-Given an array of integers `nums` sorted in non-decreasing order, find the starting and ending position of a given `target` value.
+Given an array of integers `nums` sorted in non-decreasing order, find the starting and ending position of a given
+`target` value.
 
 If the `target` is not found in the array, return `[-1, -1]`.
 
@@ -22,15 +23,15 @@ To efficiently solve the problem, we use **Binary Search** to find:
 
 1\. Perform a binary search to locate the first occurrence of the `target`.
 
-   - If `nums[mid] == target`, update `first` and search in the left half to check for earlier occurrences.
+- If `nums[mid] == target`, update `first` and search in the left half to check for earlier occurrences.
 
-   - Adjust the search range (`left` and `right`) based on comparisons.
+- Adjust the search range (`left` and `right`) based on comparisons.
 
 2\. Perform another binary search to locate the last occurrence of the `target`.
 
-   - If `nums[mid] == target`, update `last` and search in the right half to check for later occurrences.
+- If `nums[mid] == target`, update `last` and search in the right half to check for later occurrences.
 
-   - Adjust the search range (`left` and `right`) based on comparisons.
+- Adjust the search range (`left` and `right`) based on comparisons.
 
 3\. Return the indices `[first, last]`.
 

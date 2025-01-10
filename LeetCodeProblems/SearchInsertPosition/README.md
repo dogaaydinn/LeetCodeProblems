@@ -2,7 +2,8 @@
 
 ## Problem Description
 
-Given a sorted array of distinct integers `nums` and a target value `target`, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+Given a sorted array of distinct integers `nums` and a target value `target`, return the index if the target is found.
+If not, return the index where it would be if it were inserted in order.
 
 The algorithm must run in **O(log N)** runtime complexity.
 
@@ -18,15 +19,16 @@ The solution uses **Binary Search** to efficiently find the position where the t
 
 2\. Perform a binary search:
 
-   - Calculate the middle index (`mid`) of the current search range.
+- Calculate the middle index (`mid`) of the current search range.
 
-   - If `nums[mid] == target`, return `mid`.
+- If `nums[mid] == target`, return `mid`.
 
-   - If `nums[mid] < target`, move the `left` pointer to `mid + 1` (search in the right half).
+- If `nums[mid] < target`, move the `left` pointer to `mid + 1` (search in the right half).
 
-   - If `nums[mid] > target`, move the `right` pointer to `mid - 1` (search in the left half).
+- If `nums[mid] > target`, move the `right` pointer to `mid - 1` (search in the left half).
 
-3\. If the target is not found, return the `left` pointer, which represents the index where the target should be inserted.
+3\. If the target is not found, return the `left` pointer, which represents the index where the target should be
+inserted.
 
 ### Complexity:
 

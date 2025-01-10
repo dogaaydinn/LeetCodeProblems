@@ -2,7 +2,8 @@ using System.Text;
 
 namespace LeetCodeProblems.CountAndSay;
 
-public class _38_CountAndSay {
+public class _38_CountAndSay
+{
     /*
         Approach:
         1. We will start with n = 1.
@@ -15,32 +16,35 @@ public class _38_CountAndSay {
         8. We will return the next sequence.
         9. Time complexity is O(n * m) where n is the input and m is the length of the sequence.
         10. Space complexity is O(m) where m is the length of the sequence.
-        
+
      */
-    public string CountAndSay(int n) {
+    public string CountAndSay(int n)
+    {
         if (n == 1) return "1";
 
         var result = "1";
-        for (var i = 2; i <= n; i++) {
-            result = GetNextSequence(result);
-        }
+        for (var i = 2; i <= n; i++) result = GetNextSequence(result);
         return result;
     }
 
-    private string GetNextSequence(string sequence) {
-        StringBuilder nextSequence = new StringBuilder();
+    private string GetNextSequence(string sequence)
+    {
+        var nextSequence = new StringBuilder();
         var count = 1;
         var currentChar = sequence[0];
 
-        for (var i = 1; i < sequence.Length; i++) {
-            if (sequence[i] == currentChar) {
+        for (var i = 1; i < sequence.Length; i++)
+            if (sequence[i] == currentChar)
+            {
                 count++;
-            } else {
+            }
+            else
+            {
                 nextSequence.Append(count).Append(currentChar);
                 currentChar = sequence[i];
                 count = 1;
             }
-        }
+
         nextSequence.Append(count).Append(currentChar);
 
         return nextSequence.ToString();
