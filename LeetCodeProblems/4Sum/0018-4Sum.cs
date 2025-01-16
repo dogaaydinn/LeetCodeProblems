@@ -2,6 +2,28 @@ namespace LeetCodeProblems._4Sum;
 
 public class _18_4Sum
 {
+    /*
+    Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
+    0 <= a, b, c, d < n
+    a, b, c, and d are distinct.
+    nums[a] + nums[b] + nums[c] + nums[d] == target
+    You may return the answer in any order.
+
+    Approach:
+    1. Sort the nums array.
+    2. Iterate through the nums array.
+    3. If the current number is the same as the previous number, skip it.
+    4. Initialize left as j + 1 and right as nums.Length - 1.
+    5. Iterate while left is less than right.
+    6. Calculate the sum of nums[i], nums[j], nums[left], and nums[right].
+    7. If the sum is equal to target, add the quadruplet to the result.
+    8. Skip the duplicates.
+    9. Increment left and decrement right.
+
+    Complexity Analysis:
+    Time Complexity: O(n^3), where n is the length of nums.
+    Space Complexity: O(1).
+     */
     public IList<IList<int>> FourSum(int[] nums, int target)
     {
         Array.Sort(nums);

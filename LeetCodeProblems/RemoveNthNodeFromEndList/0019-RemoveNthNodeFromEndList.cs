@@ -10,6 +10,20 @@ public class ListNode
     }
 }
 
+/*
+    Problem:
+    Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+    Approach:
+    1. Create a dummy node.
+    2. Create two pointers, first and second, and point them to the dummy node.
+    3. Move the first pointer n+1 steps ahead.
+    4. Move both pointers until the first pointer reaches the end.
+    5. Remove the nth node from the end.
+
+    Time complexity: O(n), where n is the length of the linked list.
+    Space complexity: O(1)
+ */
 public class _19_RemoveNthNodeFromEndList
 {
     public ListNode? RemoveNthFromEnd(ListNode? head, int n)
