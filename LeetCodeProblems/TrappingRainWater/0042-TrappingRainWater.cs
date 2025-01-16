@@ -1,6 +1,7 @@
 namespace LeetCodeProblems.TrappingRainWater;
 
-public class _42_TrappingRainWater {
+public class _42_TrappingRainWater
+{
     /*
      Approach: Two Pointers
         1. We will use two pointers left and right and two variables leftMax and rightMax to keep track of the maximum height of the left and right side of the array.
@@ -15,36 +16,35 @@ public class _42_TrappingRainWater {
             c. We will move the right pointer to the left.
         5. We will repeat the above steps until the left pointer is less than the right pointer.
         6. Finally, we will return the waterTrapped variable which will contain the total amount of water trapped between the blocks.
-        
+
         Time Complexity: O(n)
         Space Complexity: O(1)
      */
-    public int Trap(int[] height) {
-        if (height.Length == 0) {
-            return 0;
-        }
+    public int Trap(int[] height)
+    {
+        if (height.Length == 0) return 0;
 
         int left = 0, right = height.Length - 1;
         int leftMax = 0, rightMax = 0;
         var waterTrapped = 0;
 
-        while (left < right) {
-            if (height[left] < height[right]) {
-                if (height[left] >= leftMax) {
+        while (left < right)
+            if (height[left] < height[right])
+            {
+                if (height[left] >= leftMax)
                     leftMax = height[left];
-                } else {
+                else
                     waterTrapped += leftMax - height[left];
-                }
                 left++;
-            } else {
-                if (height[right] >= rightMax) {
+            }
+            else
+            {
+                if (height[right] >= rightMax)
                     rightMax = height[right];
-                } else {
+                else
                     waterTrapped += rightMax - height[right];
-                }
                 right--;
             }
-        }
 
         return waterTrapped;
     }
