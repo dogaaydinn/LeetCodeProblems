@@ -3,6 +3,10 @@ namespace LeetCodeProblems.CombinationSumII;
 public class _40_CombinationSumII
 {
     /*
+     Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target.
+     Each number in candidates may only be used once in the combination.
+     Note: The solution set must not contain duplicate combinations.
+
      Approach:
         1. Sort the candidates array.
         2. Use backtracking to find all the combinations.
@@ -11,16 +15,16 @@ public class _40_CombinationSumII
         5. Add the current element to the list and call the backtrack function recursively with the updated target and start index.
         6. Remove the last element from the list after the recursive call.
         7. Return the result.
-        
+
         Time complexity: O(2^n)
         Space complexity: O(n)
-        
+
      */
     public IList<IList<int>> CombinationSum2(int[] candidates, int target)
     {
         Array.Sort(candidates);
-        List<IList<int>> result = new List<IList<int>>();
-        List<int> current = new List<int>();
+        List<IList<int>> result = new();
+        var current = new List<int>();
         Backtrack(candidates, target, 0, current, result);
         return result;
     }

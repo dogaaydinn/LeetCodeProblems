@@ -1,7 +1,11 @@
 namespace LeetCodeProblems.FirstMissingPositive;
 
-public class _41_FirstMissingPositive {
+public class _41_FirstMissingPositive
+{
     /*
+     Given an unsorted integer array nums, find the smallest missing positive integer.
+     You must implement an algorithm that runs in O(n) time and uses constant extra space.
+
         Approach:
             1. Iterate through the array and swap the elements to their correct positions.
             2. The correct position for the element nums[i] is nums[i] - 1.
@@ -10,29 +14,27 @@ public class _41_FirstMissingPositive {
             5. If not, swap it with the element at the correct position.
             6. Iterate through the array again and find the first element that is not in the correct position.
             7. The first element that is not in the correct position is the first missing positive integer.
-            
+
             Time complexity: O(n)
             Space complexity: O(1)
      */
-    public int FirstMissingPositive(int[] nums) {
+    public int FirstMissingPositive(int[] nums)
+    {
         var n = nums.Length;
 
-        for (var i = 0; i < n; i++) {
-            while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
+        for (var i = 0; i < n; i++)
+            while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i])
                 Swap(nums, i, nums[i] - 1);
-            }
-        }
 
-        for (var i = 0; i < n; i++) {
-            if (nums[i] != i + 1) {
+        for (var i = 0; i < n; i++)
+            if (nums[i] != i + 1)
                 return i + 1;
-            }
-        }
 
         return n + 1;
     }
 
-    private void Swap(int[] nums, int i, int j) {
+    private void Swap(int[] nums, int i, int j)
+    {
         (nums[i], nums[j]) = (nums[j], nums[i]);
     }
 }
