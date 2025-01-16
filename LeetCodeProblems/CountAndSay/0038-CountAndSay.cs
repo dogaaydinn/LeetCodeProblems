@@ -5,6 +5,9 @@ namespace LeetCodeProblems.CountAndSay;
 public class _38_CountAndSay
 {
     /*
+     Given an integer n, return the nth term of the count-and-say sequence.
+     The count-and-say sequence is the sequence of integers with the first five terms as following:
+
         Approach:
         1. We will start with n = 1.
         2. We will get the sequence for n = 1.
