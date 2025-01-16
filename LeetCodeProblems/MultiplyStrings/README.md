@@ -1,29 +1,34 @@
 # Problem: 43. Multiply Strings
 
-The problem requires multiplying two non-negative integers represented as strings, `num1` and `num2`, and returning the product as a string. The input strings do not contain leading zeros except when the number is 0.
+The problem requires multiplying two non-negative integers represented as strings, `num1` and `num2`, and returning the
+product as a string. The input strings do not contain leading zeros except when the number is 0.
 
 ## Approach: Simulated Multiplication Using Arrays
 
 ### Steps:
+
 1. **Result Array:**
-   - Create an integer array `result` of size `m + n` (where `m` is the length of `num1` and `n` is the length of `num2`) to store intermediate results.
+    - Create an integer array `result` of size `m + n` (where `m` is the length of `num1` and `n` is the length of
+      `num2`) to store intermediate results.
 
 2. **Multiply Digits:**
-   - Iterate through each digit of `num1` and `num2` from right to left.
-   - Multiply digits `num1[i]` and `num2[j]`.
-   - Add the product to `result[i + j + 1]` and update the values at indices `result[i + j + 1]` and `result[i + j]` to account for carries.
+    - Iterate through each digit of `num1` and `num2` from right to left.
+    - Multiply digits `num1[i]` and `num2[j]`.
+    - Add the product to `result[i + j + 1]` and update the values at indices `result[i + j + 1]` and `result[i + j]` to
+      account for carries.
 
 3. **Build the Result String:**
-   - Convert the `result` array into a string, skipping leading zeros.
+    - Convert the `result` array into a string, skipping leading zeros.
 
 4. **Handle Edge Cases:**
-   - If the result string is empty (e.g., both inputs are "0"), return "0".
+    - If the result string is empty (e.g., both inputs are "0"), return "0".
 
 ### Complexity Analysis:
+
 - **Time Complexity:** O(m * n)
-  - Each digit of `num1` is multiplied with each digit of `num2`.
+    - Each digit of `num1` is multiplied with each digit of `num2`.
 - **Space Complexity:** O(m + n)
-  - The result array is of size `m + n`.
+    - The result array is of size `m + n`.
 
 ## Code Implementation
 
@@ -59,17 +64,19 @@ public class _43_MultiplyStrings {
 }
 ```
 
-
 ### Explanation:
+
 - Perform the multiplication similar to how it is done manually.
 - Add the intermediate results at each position and handle carries.
 
 ### Intermediate Steps:
+
 1. Multiply 3 (from `num1`) with 6 (from `num2`) and add to `result`.
 2. Repeat for all digits and update the carry accordingly.
 3. Convert the `result` array to the final string by skipping leading zeros.
 
 ## References:
+
 - [LeetCode Problem #43](https://leetcode.com/problems/multiply-strings/)
 
 
