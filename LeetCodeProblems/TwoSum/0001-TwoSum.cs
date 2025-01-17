@@ -19,15 +19,21 @@ public static class _001_TwoSum
      */
     public static int[] TwoSumSolution(int[] nums, int target)
     {
-        var returnedIndices = new Dictionary<int, int>();
+        if (nums == null)
+            throw new ArgumentException("Input array cannot be null");
 
+        if (nums.Length < 2)
+            throw new ArgumentException("Input array must have at least two elements");
+
+        var dict = new Dictionary<int, int>();
         for (var i = 0; i < nums.Length; i++)
         {
-            var other = target - nums[i];
-
-            if (returnedIndices.TryGetValue(other, out var index)) return new[] { index, i };
-
-            returnedIndices[nums[i]] = i;
+            var complement = target - nums[i];
+            if (dict.TryGetValue(complement, out var value))
+            {
+                return new[] { value, i };
+            }
+            dict[nums[i]] = i;
         }
 
         throw new ArgumentException("No two sum solution");
