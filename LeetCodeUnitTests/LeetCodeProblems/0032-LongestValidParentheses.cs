@@ -1,19 +1,42 @@
 using Xunit;
+using LeetCodeProblems.LongestValidParentheses;
 
 namespace LeetCodeTests.LeetCodeProblems;
 
 public class LongestValidParenthesesTests
 {
+    public static IEnumerable<object[]> GetTestData()
+    {
+        yield return new object[] { "(()", 2 };
+        yield return new object[] { ")()())", 4 };
+        yield return new object[] { "", 0 };
+        yield return new object[] { "(", 0 };
+        yield return new object[] { ")", 0 };
+        yield return new object[] { "()", 2 };
+        yield return new object[] { "()(()", 2 };
+        yield return new object[] { "(()()", 4 };
+        yield return new object[] { "(()))())(", 4 };
+        yield return new object[] { "(()))())", 4 };
+        yield return new object[] { "(()))())()", 8 };
+        yield return new object[] { "(()))())()(", 8 };
+        yield return new object[] { "(()))())()()", 10 };
+        yield return new object[] { "(()))())()()(", 10 };
+        yield return new object[] { "(()))())()()()", 12 };
+        yield return new object[] { "(()))())()()()(", 12 };
+        yield return new object[] { "(()))())()()()()", 14 };
+        yield return new object[] { "(()))())()()()()(", 14 };
+        yield return new object[] { "(()))())()()()()()", 16 };
+        yield return new object[] { "(()))())()()()()()(", 16 };
+        yield return new object[] { "(()))())()()()()()()", 18 };
+        yield return new object[] { "(()))())()()()()()()(", 18 };
+    }
+
     [Theory]
-    [InlineData("(()", 2)]
-    [InlineData(")()())", 4)]
-    [InlineData("", 0)]
-    [InlineData("()(()", 2)]
-    [InlineData("()(())", 6)]
+    [MemberData(nameof(GetTestData))]
     public void LongestValidParentheses_ValidInputs_ReturnsExpectedResult(string s, int expected)
     {
         // Arrange
-        var solution = new _32_LongestValidParentheses();
+        var solution = new _0032_LongestValidParentheses();
 
         // Act
         var result = solution.LongestValidParentheses(s);

@@ -1,44 +1,56 @@
 namespace LeetCodeProblems.MergeKSortedLists;
 
-public class Solution
+public class MergeKSortedLists
 {
-    /*
-     Given an array of linked-lists lists, each linked list is sorted in ascending order.
-     Merge all the linked-lists into one sorted linked-list and return it.
-
-        Approach:
-        1. Create a SortedSet heap.
-        2. Add the first node of each linked list to the heap.
-        3. Create a dummy node and a current node.
-        4. Iterate while the heap is not empty.
-        5. Get the smallest node from the heap.
-        6. Add the node to the current node.
-        7. Add the next node of the smallest node to the heap.
-        8. Return the dummy node's next node.
-
-        Time complexity: O(n * m * log(m)), where n is the number of linked lists and m is the average length of the linked lists.
-        Space complexity: O(m), where m is the average length of the linked lists.
-     */
-    public ListNode? MergeKLists(ListNode[] lists)
+    public class ListNode 
     {
-        var heap = new SortedSet<(int val, int listIndex, ListNode? node)>();
-
-        for (var i = 0; i < lists.Length; i++) heap.Add((lists[i].val, i, lists[i]));
-
-        var dummy = new ListNode();
-        var current = dummy;
-
-        while (heap.Count > 0)
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null) 
         {
-            var smallest = heap.Min;
-            heap.Remove(smallest);
-
-            current.next = smallest.node;
-            current = current.next;
-
-            heap.Add((smallest.node.next.val, smallest.listIndex, smallest.node.next));
+            this.val = val;
+            this.next = next;
         }
+    }
 
-        return dummy.next;
+    public class Solution 
+    {
+        public ListNode MergeKLists(ListNode[] lists) 
+        {
+            if (lists == null || lists.Length == 0)
+                return null;
+            
+            // Initialize the priority queue.
+            // The key (priority) is the node's value.
+            var pq = new PriorityQueue<ListNode, int>();
+
+            // Enqueue the head of each non-null list.
+            foreach (var node in lists)
+            {
+                if (node != null)
+                    pq.Enqueue(node, node.val);
+            }
+            
+            // Dummy head helps simplify list operations.
+            ListNode dummy = new ListNode(0);
+            ListNode tail = dummy;
+            
+            // Extract nodes one by one in increasing order.
+            while (pq.Count > 0)
+            {
+                // Remove the node with the smallest value.
+                var smallestNode = pq.Dequeue();
+                tail.next = smallestNode;
+                tail = tail.next;
+                
+                // If there is a next node, enqueue it.
+                if (smallestNode.next != null)
+                {
+                    pq.Enqueue(smallestNode.next, smallestNode.next.val);
+                }
+            }
+            
+            return dummy.next;
+        }
     }
 }

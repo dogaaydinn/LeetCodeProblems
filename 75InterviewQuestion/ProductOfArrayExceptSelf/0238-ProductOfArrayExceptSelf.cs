@@ -21,18 +21,33 @@ public class _238_ProductOfArrayExceptSelf
      */
     public int[] ProductExceptSelf(int[] nums)
     {
-        var n = nums.Length;
-        var output = new int[n];
-        output[0] = 1;
-        for (var i = 1; i < n; i++) output[i] = output[i - 1] * nums[i - 1];
-
-        var right = 1;
-        for (var i = n - 1; i >= 0; i--)
+        if (nums.Length == 0)
         {
-            output[i] *= right;
-            right *= nums[i];
+            return Array.Empty<int>();
         }
 
-        return output;
+        int n = nums.Length;
+        int[] result = new int[n];
+        int[] leftProducts = new int[n];
+        int[] rightProducts = new int[n];
+
+        leftProducts[0] = 1;
+        for (var i = 1; i < n; i++)
+        {
+            leftProducts[i] = leftProducts[i - 1] * nums[i - 1];
+        }
+
+        rightProducts[n - 1] = 1;
+        for (var i = n - 2; i >= 0; i--)
+        {
+            rightProducts[i] = rightProducts[i + 1] * nums[i + 1];
+        }
+
+        for (var i = 0; i < n; i++)
+        {
+            result[i] = leftProducts[i] * rightProducts[i];
+        }
+
+        return result;
     }
 }
