@@ -1,25 +1,46 @@
-using LeetCodeProblems.LetterCombinationsPhoneNumber;
 using Xunit;
+using LeetCodeProblems.LongestValidParentheses;
 
-namespace LeetCodeTests.LeetCodeProblems;
-
-public class LetterCombinationsPhoneNumberTests
+namespace LeetCodeTests.LeetCodeProblems
 {
-    [Theory]
-    [InlineData("23", new[] { "ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf" })]
-    [InlineData("", new string[] { })]
-    [InlineData("2", new[] { "a", "b", "c" })]
-    [InlineData("7", new[] { "p", "q", "r", "s" })]
-    [InlineData("9", new[] { "w", "x", "y", "z" })]
-    public void LetterCombinations_ValidInputs_ReturnsExpectedResult(string digits, string[] expected)
+    public class LongestValidParenthesesTests0017
     {
-        // Arrange
-        var solution = new _17_LetterCombinationsPhoneNumber();
+        public static IEnumerable<object[]> GetTestData()
+        {
+            yield return new object[] { "(()", 2 };
+            yield return new object[] { ")()())", 4 };
+            yield return new object[] { "", 0 };
+            yield return new object[] { "(", 0 };
+            yield return new object[] { ")", 0 };
+            yield return new object[] { "()", 2 };
+            yield return new object[] { "()(()", 2 };
+            yield return new object[] { "(()()", 4 };
+            yield return new object[] { "(()))())(", 4 };
+            yield return new object[] { "(()))())", 4 };
+            yield return new object[] { "(()))())()", 8 };
+            yield return new object[] { "(()))())()(", 8 };
+            yield return new object[] { "(()))())()()", 10 };
+            yield return new object[] { "(()))())()()(", 10 };
+            yield return new object[] { "(()))())()()()()", 12 };
+            yield return new object[] { "(()))())()()()()(", 12 };
+            yield return new object[] { "(()))())()()()()()", 14 };
+            yield return new object[] { "(()))())()()()()()(", 14 };
+            yield return new object[] { "(()))())()()()()()()", 16 };
+            yield return new object[] { "(()))())()()()()()()(", 16 };
+        }
 
-        // Act
-        var result = solution.LetterCombinations(digits);
+        [Theory]
+        [MemberData(nameof(GetTestData))]
+        public void LongestValidParentheses_ValidInputs_ReturnsExpectedResult1(string s, int expected)
+        {
+            // Arrange
+            var solution = new _0032_LongestValidParentheses();
 
-        // Assert
-        Assert.Equal(expected, result);
+            // Act
+            var result = solution.LongestValidParentheses(s);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
     }
 }

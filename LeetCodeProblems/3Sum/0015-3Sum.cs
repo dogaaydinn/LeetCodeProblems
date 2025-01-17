@@ -25,6 +25,8 @@ public class _15_3Sum
      */
     public IList<IList<int>> ThreeSum(int[] nums)
     {
+        if (nums == null)
+            return new List<IList<int>>();
         Array.Sort(nums);
         var result = new List<IList<int>>();
 

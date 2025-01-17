@@ -14,7 +14,7 @@ public class LongestPalindromicSubstringTests
     public void LongestPalindrome_ValidInputs_ReturnsExpectedResult(string s, string expected)
     {
         // Act
-        var result = _005_LongestPalindromicSubstring.LongestPalindrome(s);
+        var result = _0005_LongestPalindromicSubstring.LongestPalindrome(s);
 
         // Assert
         Assert.Equal(expected, result);
