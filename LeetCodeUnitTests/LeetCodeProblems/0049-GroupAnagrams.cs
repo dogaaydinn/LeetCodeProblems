@@ -1,7 +1,7 @@
 using LeetCodeProblems.GroupAnagrams;
 using Xunit;
 
-namespace LeetCodeTests;
+namespace LeetCodeTests.LeetCodeProblems;
 
 public class _0049_GroupAnagrams_Tests
 {
