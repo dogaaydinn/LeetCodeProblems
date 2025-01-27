@@ -1,18 +1,11 @@
-using Xunit;
 using LeetCodeProblems.MergeIntervals;
-using System.Collections.Generic;
+using Xunit;
 
-namespace MergeIntervalsTests
+namespace LeetCodeTests.LeetCodeProblems
 {
     public class MergeIntervalsTests
     {
-        private readonly MergeIntervals.MergeIntervals _mergeIntervals;
-
-        public MergeIntervalsTests()
-        {
-            _mergeIntervals = new MergeIntervals.MergeIntervals();
-        }
-
+        
         [Fact]
         public void Merge_EmptyInput_ReturnsEmpty()
         {
